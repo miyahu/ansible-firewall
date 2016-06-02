@@ -1,6 +1,16 @@
 ---
 - name: Start Iptables Persistent
   service: name=iptables-persistent state=started
+  when: ansible_distribution_release == 'wheezy'
 
 - name: Restart Iptables Persistent
   service: name=iptables-persistent state=restarted
+  when: ansible_distribution_release == 'wheezy'
+
+- name: Start Netfilter Persistent
+  service: name=netfilter-persistent state=started
+  when: ansible_distribution_release == 'jessie'
+
+- name: Restart Netfilter Persistent
+  service: name=netfilter-persistent state=restarted
+  when: ansible_distribution_release == 'jessie'
