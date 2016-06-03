@@ -1,0 +1,9 @@
+---
+#- include: install.yml 
+
+#- name: Testing files
+#  shell: /sbin/iptables-restore -t < /etc/iptables/rules.v4
+#  register: toto
+
+#- name: print var
+#  debug: msg="{{ toto }}"
